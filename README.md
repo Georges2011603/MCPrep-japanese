@@ -1,2 +1,2 @@
-# MCPrep-japanese
+# MCPrep-日本語化プロジェクト
 MCPrepを日本語化するプロジェクトです。
