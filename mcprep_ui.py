@@ -765,7 +765,7 @@ class MCPREP_PT_world_tools(bpy.types.Panel):
 		rw = layout.row()
 		col = rw.column(align=True)
 		obj = world_tools.get_time_object()
-		col.label(text="Time of day")
+		col.label(text="日付")
 		if obj and "MCprepHour" in obj:
 			time = obj["MCprepHour"]
 			col.prop(
@@ -846,11 +846,11 @@ class MCPREP_PT_skins(bpy.types.Panel):
 				p.filepath = conf.skin_list[sind][1]
 			else:
 				row.enabled = False
-				p = row.operator("mcprep.skin_swapper", text="No skins found")
+				p = row.operator("mcprep.skin_swapper", text="スキンがありません")
 			row = col.row(align=True)
-			row.operator("mcprep.skin_swapper", text="Skin from file")
+			row.operator("mcprep.skin_swapper", text="スキンを開く")
 			row = col.row(align=True)
-			row.operator("mcprep.applyusernameskin", text="Skin from username")
+			row.operator("mcprep.applyusernameskin", text="ユーザー名からスキンを開く")
 
 		split = layout.split()
 		col = split.column(align=True)
@@ -1006,7 +1006,7 @@ def mob_spawner(self, context):
 		b_row = box.row()
 		b_row.scale_y = 2
 		b_row.operator(
-			"mcprep.reload_spawners", text="Reload assets", icon="ERROR")
+			"mcprep.reload_spawners", text="アセットを再読み込み", icon="ERROR")
 
 	# get which rig is selected
 	if scn_props.mob_list:
@@ -1087,7 +1087,7 @@ def meshswap_spawner(self, context):
 	elif not context.scene.meshswap_path.lower().endswith('.blend'):
 		box = col.box()
 		b_row = box.row()
-		b_row.label(text="Meshswap file must be a .blend")
+		b_row.label(text="メッシュスワップのファイルの拡張子は .blend である必要があります。")
 		b_row = box.row()
 		b_row.scale_y = 2
 		b_row.operator(
