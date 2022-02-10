@@ -823,7 +823,7 @@ class MCPREP_PT_skins(bpy.types.Panel):
 			col = layout.column()
 			col.label(text="No skins found/loaded")
 			p = col.operator(
-				"mcprep.reload_skins", text="Press to reload", icon="ERROR")
+				"mcprep.reload_skins", text='"再読み込み"を押してください', icon="ERROR")
 		elif conf.skin_list and len(conf.skin_list) <= sind:
 			col = layout.column()
 			col.label(text="Reload skins")
