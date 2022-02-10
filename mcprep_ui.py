@@ -53,7 +53,7 @@ class MCPREP_MT_mob_spawner(bpy.types.Menu):
 	"""Shift-A menu in the 3D view"""
 	bl_label = "Mob スポーン"
 	bl_idname = "MCPREP_MT_mob_spawner"
-	bl_description = "Menu for placing in the shift-A add object menu"
+	bl_description = "shift-Aで開けるオブジェクトメニュー"
 
 	def draw(self, context):
 		layout = self.layout
@@ -165,7 +165,7 @@ class MCPREP_MT_model_spawn(bpy.types.Menu):
 	def draw(self, context):
 		layout = self.layout
 		if not util.bv28():
-			layout.label(text="Requires blender 2.8 or newer")
+			layout.label(text="blender 2.8またはそれ以上のバージョンが必要です。")
 			return
 		if not context.scene.mcprep_props.model_list:
 			layout.label(text="No models found!")
@@ -314,7 +314,7 @@ class McprepPreference(bpy.types.AddonPreferences):
 		name="Exporter")
 	preferences_tab = bpy.props.EnumProperty(
 		items=[
-			('settings', 'Settings', 'MC Prepの設定'),
+			('settings', '設定', 'MC Prepの設定'),
 			('tutorials', 'チュートリアル', 'MCPrepのチュートリアル&その他のhelp'),
 			('tracker_updater', '情報提供/更新',
 				'情報提供とアップデートの設定')],
@@ -531,10 +531,10 @@ class McprepPreference(bpy.types.AddonPreferences):
 				"wm.url_open", text="Minecraftワールドを読み込む"
 			).url = "https://theduckcow.com/dev/blender/mcprep/mcprep-minecraft-world-imports/"
 			row.operator(
-				"wm.url_open", text="Mob (rig) spawning"
+				"wm.url_open", text="Mob(リグ)を召喚"
 			).url = "https://theduckcow.com/dev/blender/mcprep/mcprep-spawner/"
 			row.operator(
-				"wm.url_open", text="Skin swapping"
+				"wm.url_open", text="スキンのスワッピング"
 			).url = "https://theduckcow.com/dev/blender/mcprep/skin-swapping/"
 
 			row = layout.row()
@@ -994,15 +994,15 @@ def mob_spawner(self, context):
 		b_row.label(text="")
 		b_col = box.column()
 		b_col.scale_y = 0.7
-		b_col.label(text="No mobs in category,")
-		b_col.label(text="install a rig below or")
-		b_col.label(text="copy file to folder.")
+		b_col.label(text="カテゴリーにMobはいません。")
+		b_col.label(text="rig belowをインストールするか、")
+		b_col.label(text="ファイルをフォルダーにコピーしてください。")
 		b_row = box.row()
 		b_row.label(text="")
 	else:
 		box = col.box()
 		b_row = box.row()
-		b_row.label(text="No mobs loaded")
+		b_row.label(text="Mobは読み込まれていません。")
 		b_row = box.row()
 		b_row.scale_y = 2
 		b_row.operator(
