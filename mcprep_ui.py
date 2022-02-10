@@ -1257,12 +1257,12 @@ def entity_spawner(self, context):
 	else:
 		box = col.box()
 		b_row = box.row()
-		b_row.label(text="No entities loaded")
+		b_row.label(text="エンティティが読み込まれていません")
 		b_row = box.row()
 		b_row.scale_y = 2
 		b_row.operator(
 			"mcprep.reload_spawners",
-			text="Reload assets", icon="ERROR")
+			text="アセットを再読み込み", icon="ERROR")
 
 	col = layout.column(align=True)
 	row = col.row()
