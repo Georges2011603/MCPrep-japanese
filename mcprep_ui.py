@@ -781,7 +781,7 @@ class MCPREP_PT_world_tools(bpy.types.Panel):
 			box = col.box()
 			subcol = box.column()
 			subcol.scale_y = 0.8
-			subcol.label(text="No time controller,")
+			subcol.label(text="タイムコントローラーがありません")
 			subcol.label(text="add dynamic MC world.")
 		# col.label(text="World setup")
 		# col.operator("mcprep.world")
