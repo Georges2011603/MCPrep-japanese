@@ -291,7 +291,7 @@ class McprepPreference(bpy.types.AddonPreferences):
 		subtype='DIR_PATH',
 		default=scriptdir + "/MCprep_resources/skins/")
 	world_obj_path = bpy.props.StringProperty(
-		name="World Folder",
+		name="ワールドのフォルダー",
 		description=(
 			"Default folder for opening world objs from programs "
 			"like jmc2obj or Mineways"),
@@ -308,16 +308,16 @@ class McprepPreference(bpy.types.AddonPreferences):
 		default=20)
 	MCprep_exporter_type = bpy.props.EnumProperty(
 		items=[
-			('(choose)', '(choose)', 'Select your exporter'),
+			('(choose)', '(choose)', 'エクスポーターを選択してください		'),
 			('jmc2obj', 'jmc2obj', 'Select if exporter used was jmc2obj'),
 			('Mineways', 'Mineways', 'Select if exporter used was Mineways')],
 		name="Exporter")
 	preferences_tab = bpy.props.EnumProperty(
 		items=[
-			('settings', 'Settings', 'Change MCprep settings'),
-			('tutorials', 'Tutorials', 'View MCprep tutorials & other help'),
-			('tracker_updater', 'Tracking/Updater',
-				'Change tracking and updating settings')],
+			('settings', 'Settings', 'MC Prepの設定'),
+			('tutorials', 'チュートリアル', 'View MCprep tutorials & other help'),
+			('tracker_updater', '情報提供/更新',
+				'情報提供とアップデートの設定')],
 		name="Exporter")
 	verbose = bpy.props.BoolProperty(
 		name="Verbose logging",
@@ -357,27 +357,27 @@ class McprepPreference(bpy.types.AddonPreferences):
 		default=True,
 	)
 	updater_interval_months = bpy.props.IntProperty(
-		name='Months',
-		description="Number of months between checking for updates",
+		name='ヵ月',
+		description="何か月おきに更新するか",
 		default=0,
 		min=0
 	)
 	updater_interval_days = bpy.props.IntProperty(
-		name='Days',
-		description="Number of days between checking for updates",
+		name='日',
+		description="何日おきに更新するか",
 		default=1,
 		min=0,
 	)
 	updater_interval_hours = bpy.props.IntProperty(
-		name='Hours',
-		description="Number of hours between checking for updates",
+		name='時間',
+		description="何時間おきに更新するか",
 		default=0,
 		min=0,
 		max=23
 	)
 	updater_interval_minutes = bpy.props.IntProperty(
-		name='Minutes',
-		description="Number of minutes between checking for updates",
+		name='分',
+		description="何分おきに更新するか",
 		default=0,
 		min=0,
 		max=59
