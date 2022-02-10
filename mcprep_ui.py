@@ -63,7 +63,7 @@ class MCPREP_MT_mob_spawner(bpy.types.Menu):
 		if not scn_props.mob_list_all:
 			row = layout.row()
 			row.operator(
-				"mcprep.reload_mobs", text="Load mobs", icon=HAND_ICON)
+				"mcprep.reload_mobs", text="Mobを読み込む", icon=HAND_ICON)
 			row.scale_y = 2
 			row.alignment = 'CENTER'
 			return
@@ -95,7 +95,7 @@ class MCPREP_MT_meshswap_place(bpy.types.Menu):
 		layout = self.layout
 		meshswap_blocks = meshswap.getMeshswapList(context)
 		if not meshswap_blocks:
-			layout.label(text="No meshswap blocks found!")
+			layout.label(text="メッシュスワップブロックが見つかりません！")
 		for blockset in meshswap_blocks:
 			# do some kind of check for if no blocks found
 			icn = "BLANK1"
@@ -203,7 +203,7 @@ class MCPREP_MT_3dview_add(bpy.types.Menu):
 		if not conf.loaded_all_spawners and not all_loaded:
 			row = layout.row()
 			row.operator(
-				"mcprep.reload_spawners", text="Load spawners", icon=HAND_ICON)
+				"mcprep.reload_spawners", text="スポーンを読み込む", icon=HAND_ICON)
 			row.scale_y = 2
 			row.alignment = 'CENTER'
 			return
