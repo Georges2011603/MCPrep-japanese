@@ -430,13 +430,13 @@ class McprepPreference(bpy.types.AddonPreferences):
 
 			split = util.layout_split(box, factor=factor_width)
 			col = split.column()
-			col.label(text="Entity assets")
+			col.label(text="エンティティのアセット")
 
 			col = split.column()
 			col.prop(self, "entity_path", text="")
 			if not os.path.isfile(bpy.path.abspath(self.entity_path)):
 				row = box.row()
-				row.label(text="Entity file not found", icon="ERROR")
+				row.label(text="エンティティーのファイルが見つかりません", icon="ERROR")
 
 			row = layout.row()
 			row.scale_y = 0.7
@@ -453,7 +453,7 @@ class McprepPreference(bpy.types.AddonPreferences):
 			# col = split.column()
 			# col.operator("mcprep.skin_swapper", text="Install resource pack")
 			col = split.column()
-			p = col.operator("mcprep.openfolder", text="Open texture pack folder")
+			p = col.operator("mcprep.openfolder", text="テクスチャーパックのフォルダーを開く")
 			p.folder = self.custom_texturepack_path
 
 			row = layout.row()
@@ -462,12 +462,12 @@ class McprepPreference(bpy.types.AddonPreferences):
 			box = layout.box()
 			split = util.layout_split(box, factor=factor_width)
 			col = split.column()
-			col.label(text="Rig Folder")
+			col.label(text="Rigフォルダー")
 			col = split.column()
 			col.prop(self, "mob_path", text="")
 			split = util.layout_split(box, factor=factor_width)
 			col = split.column()
-			col.label(text="Select/install mobs")
+			col.label(text="選択/Mobをインストール")
 			col = split.column()
 			col.operator(
 				"mcprep.mob_install_menu", text="Install file for mob spawning")
@@ -486,11 +486,11 @@ class McprepPreference(bpy.types.AddonPreferences):
 			col.prop(self, "skin_path", text="")
 			split = util.layout_split(box, factor=factor_width)
 			col = split.column()
-			col.label(text="Install skins")
+			col.label(text="スキンを読み込む")
 			col = split.column()
 			col.operator("mcprep.add_skin", text="Install skin file for swapping")
 			col = split.column()
-			p = col.operator("mcprep.openfolder", text="Open skin folder")
+			p = col.operator("mcprep.openfolder", text="スキンのフォルダーを開く")
 			p.folder = self.skin_path
 
 			# misc settings
@@ -521,14 +521,14 @@ class McprepPreference(bpy.types.AddonPreferences):
 			row.scale_y = 2
 			row.operator(
 				"wm.url_open",
-				text="Learn MCprep + Blender, 1-minute tutorials",
+				text="MCprep を学ぶ+ Blender, 1分チュートリアル",
 				icon="FILE_MOVIE"
 			).url = "https://bit.ly/MCprepTutorials"
 
 			row = layout.row()
 			row.scale_y = 1.5
 			row.operator(
-				"wm.url_open", text="Import Minecraft worlds"
+				"wm.url_open", text="Minecraftワールドを読み込む"
 			).url = "https://theduckcow.com/dev/blender/mcprep/mcprep-minecraft-world-imports/"
 			row.operator(
 				"wm.url_open", text="Mob (rig) spawning"
@@ -543,7 +543,7 @@ class McprepPreference(bpy.types.AddonPreferences):
 				"wm.url_open", text="jmc2obj/Mineways"
 			).url = "https://theduckcow.com/dev/blender/mcprep/setup-world-exporters/"
 			row.operator(
-				"wm.url_open", text="World Tools"
+				"wm.url_open", text="ワールドツール"
 			).url = "https://theduckcow.com/dev/blender/mcprep/world-tools/"
 			row.operator(
 				"wm.url_open", text="Tutorial Series"
@@ -581,7 +581,7 @@ class McprepPreference(bpy.types.AddonPreferences):
 			# updater draw function
 			addon_updater_ops.update_settings_ui(self, context)
 		if not util.bv28():
-			layout.label(text="Don't forget to save user preferences!")
+			layout.label(text="プレファレンスを保存することを忘れないでください！")
 
 
 class MCPREP_PT_world_imports(bpy.types.Panel):
@@ -603,7 +603,7 @@ class MCPREP_PT_world_imports(bpy.types.Panel):
 		split = layout.split()
 		col = split.column(align=True)
 		row = col.row()
-		row.label(text="World exporter")
+		row.label(text="MCワールドのエクスポーター)
 		row.operator(
 			"mcprep.open_help", text="", icon="QUESTION", emboss=False
 		).url = "https://theduckcow.com/dev/blender/mcprep/mcprep-minecraft-world-imports/"
