@@ -1310,7 +1310,7 @@ def model_spawner(self, context):
 	addon_prefs = util.get_user_preferences(context)
 
 	layout = self.layout
-	layout.label(text="Generate models from .json files")
+	layout.label(text=".json ファイルからモデルを生成する")
 	if not util.bv28():
 		layout.label(text="Requires blender 2.8 or newer")
 		return
@@ -1338,12 +1338,12 @@ def model_spawner(self, context):
 	else:
 		box = col.box()
 		b_row = box.row()
-		b_row.label(text="No models loaded")
+		b_row.label(text="モデルが読み込まれていません")
 		b_row = box.row()
 		b_row.scale_y = 2
 		b_row.operator(
 			"mcprep.reload_spawners",
-			text="Reload assets", icon="ERROR")
+			text="アセットを再読み込み", icon="ERROR")
 
 		col = layout.column(align=True)
 		row = col.row(align=True)
@@ -1597,11 +1597,11 @@ class McprepProps(bpy.types.PropertyGroup):
 		description="MCPrepの高度な設定を表示する"
 		default=False)
 	show_settings_skin = bpy.props.BoolProperty(
-		name="show skin settings",
+		name="スキンの設定を表示する",
 		description="MCPrepの高度な設定を表示する",
 		default=False)
 	show_settings_spawner = bpy.props.BoolProperty(
-		name="show spawner settings",
+		name="スポナーの設定を表示する",
 		description="MCPrepの高度な設定を表示する",
 		default=False)
 
@@ -1614,7 +1614,7 @@ class McprepProps(bpy.types.PropertyGroup):
 	)
 	spawn_mode = bpy.props.EnumProperty(
 		name="Spawn Mode",
-		description="Set mode for rig/object spawner",
+		description="リグのモード/オブジェクトスポナー を見てください",
 		items=[
 			('mob', 'Mob', 'Show mob spawner'),
 			('model', 'Block', 'Show model (block) spawner'),
@@ -1682,26 +1682,26 @@ def register():
 	addon_prefs = util.get_user_preferences()
 
 	bpy.types.Scene.mcprep_mob_path = bpy.props.StringProperty(
-		name="Mob folder",
+		name="Mobのフォルダー",
 		description="Folder for rigs to spawn in, saved with this blend file data",
 		subtype='DIR_PATH',
 		update=mobs.update_rig_path,
 		default=addon_prefs.mob_path)
 	bpy.types.Scene.mcprep_skin_path = bpy.props.StringProperty(
-		name="Skin folder",
+		name="スキンのフォルダー",
 		description="Folder for skin textures, used in skin swapping",
 		subtype='DIR_PATH',
 		update=update_skin_path,
 		default=addon_prefs.skin_path)
 	bpy.types.Scene.meshswap_path = bpy.props.StringProperty(
-		name="Meshswap file",
+		name="メッシュスワップのファイル",
 		description="File for meshswap library",
 		subtype='FILE_PATH',
 		update=meshswap.update_meshswap_path,
 		default=addon_prefs.meshswap_path)
 	bpy.types.Scene.entity_path = bpy.props.StringProperty(
-		name="Entity file",
-		description="File for entity library",
+		name="エンティティのファイル",
+		description="エンティティライブラリのファイル",
 		subtype='FILE_PATH',
 		update=entities.update_entity_path,
 		default=addon_prefs.entity_path)
