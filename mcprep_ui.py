@@ -51,7 +51,7 @@ OPT_IN = 'URL' if util.bv28() else 'HAND'
 
 class MCPREP_MT_mob_spawner(bpy.types.Menu):
 	"""Shift-A menu in the 3D view"""
-	bl_label = "Mob Spawner"
+	bl_label = "Mob スポーン"
 	bl_idname = "MCPREP_MT_mob_spawner"
 	bl_description = "Menu for placing in the shift-A add object menu"
 
@@ -315,7 +315,7 @@ class McprepPreference(bpy.types.AddonPreferences):
 	preferences_tab = bpy.props.EnumProperty(
 		items=[
 			('settings', 'Settings', 'MC Prepの設定'),
-			('tutorials', 'チュートリアル', 'View MCprep tutorials & other help'),
+			('tutorials', 'チュートリアル', 'MCPrepのチュートリアル&その他のhelp'),
 			('tracker_updater', '情報提供/更新',
 				'情報提供とアップデートの設定')],
 		name="Exporter")
@@ -415,18 +415,18 @@ class McprepPreference(bpy.types.AddonPreferences):
 			col.prop(self, "open_mineways_path", text="")
 			split = util.layout_split(box, factor=factor_width)
 			col = split.column()
-			col.label(text="World OBJ Exports Folder")
+			col.label(text="エクスポートしたOBJファイルのフォルダー")
 			col = split.column()
 			col.prop(self, "world_obj_path", text="")
 			split = util.layout_split(box, factor=factor_width)
 			col = split.column()
-			col.label(text="Meshwap assets")
+			col.label(text="メッシュスワップのフォルダー")
 			col = split.column()
 			col.prop(self, "meshswap_path", text="")
 
 			if not os.path.isfile(bpy.path.abspath(self.meshswap_path)):
 				row = box.row()
-				row.label(text="MeshSwap file not found", icon="ERROR")
+				row.label(text="メッシュスワップのファイルが見つかりません", icon="ERROR")
 
 			split = util.layout_split(box, factor=factor_width)
 			col = split.column()
