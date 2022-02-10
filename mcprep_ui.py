@@ -1593,22 +1593,22 @@ class McprepProps(bpy.types.PropertyGroup):
 
 	# depreciated, keeping to prevent re-registration errors
 	show_settings_material = bpy.props.BoolProperty(
-		name="show material settings",
-		description="Show extra MCprep panel settings",
+		name="マテリアルの設定を表示",
+		description="MCPrepの高度な設定を表示する"
 		default=False)
 	show_settings_skin = bpy.props.BoolProperty(
 		name="show skin settings",
-		description="Show extra MCprep panel settings",
+		description="MCPrepの高度な設定を表示する",
 		default=False)
 	show_settings_spawner = bpy.props.BoolProperty(
 		name="show spawner settings",
-		description="Show extra MCprep panel settings",
+		description="MCPrepの高度な設定を表示する",
 		default=False)
 
 	# Rig settings
 	spawn_rig_category = bpy.props.EnumProperty(
-		name="Mob category",
-		description="Category of mobs & character rigs to spawn",
+		name="Mobのカテゴリー",
+		description="Mobのカテゴリー & character rigs to spawn",
 		update=mobs.spawn_rigs_category_load,
 		items=mobs.spawn_rigs_categories
 	)
